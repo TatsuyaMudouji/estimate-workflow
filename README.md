@@ -28,3 +28,8 @@
 
 ## Python
 - Python: 見積ルールの検証用（UI非依存のロジック確認）
+
+### 備忘録
+- JavaScript: UI（frontend）と最小ロジック（logic）
+- Python: 見積ルールの検証（UI非依存）
+- PHP: Web/API実装を想定した業務ロジック（UI非依存）
