@@ -1,5 +1,7 @@
 # estimate-workflow  
 
+![CI](../../actions/workflows/ci.yml/badge.svg)
+
 ## 概要
 既存の見積ロジック・サンプルコードをベースに、 業務で再利用可能な見積フローへ再構成するための検証リポジトリ。  
 
