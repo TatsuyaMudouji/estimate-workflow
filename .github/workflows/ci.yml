@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  php-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+      - name: Run PHP test script
+        run: php logic/test_estimate_core.php
+
+  python-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Python tests (fallback if pytest is unavailable)
+        run: |
+          python -c "from logic.estimate_core import EstimateParams, calculate_estimate; assert calculate_estimate(EstimateParams(10,1000))==10000"
