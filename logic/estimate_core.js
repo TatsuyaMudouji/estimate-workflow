@@ -6,9 +6,9 @@
 export function calculateEstimate(params) {
   const { area, unitPrice } = params;
 
-  if (!area || !unitPrice) {
-    throw new Error('Invalid input for estimation');
-  }
+  if (area <= 0 || unitPrice <= 0) {
+  throw new Error('Values must be greater than zero');
+}
 
   return area * unitPrice;
 }
